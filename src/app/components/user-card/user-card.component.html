@@ -1,0 +1,63 @@
+<div class="user-card">
+  <div class="user-card__info">
+    <div class="user-card__avatar">
+      <img class="user-card__avatar-picture" [src]="user.picture.large" />
+    </div>
+    <div class="user-card__descripcion">
+      <p class="user-card__full-name">
+        {{ user.name.first }} {{ user.name.last }}
+      </p>
+      <i [class]="user.gender | genderIcon"></i>
+    </div>
+
+    <div class="user-card__descripcion">
+      <i class="fa fa-map-marker user-card__icon" aria-hidden="true"></i>
+      <p class="user-card__text" [title]="user.location | address">
+        {{ user.location | address }}
+      </p>
+    </div>
+    <div class="user-card__descripcion">
+      <i class="fa fa-envelope-o user-card__icon" aria-hidden="true"></i>
+      <p class="user-card__text user-card__text--email">{{ user.email }}</p>
+    </div>
+  </div>
+
+  <ng-template [ngIf]="loading" [ngIfElse]="weatherTmpl">
+    <div class="dot-pulse"></div>
+  </ng-template>
+
+  <ng-template #weatherTmpl>
+    <div class="user-card__weather">
+      <div class="temperature__container">
+        <i [class]="weather.current_weather.weathercode | weatherIcon"></i>
+        <p class="user-card__current-temperature">
+          {{ weather.current_weather.temperature }}
+          {{ weather.hourly_units.temperature_2m }}
+        </p>
+      </div>
+      <div class="temperature__container">
+        <p class="user-card__extremes">
+          <span class="user-card__extremes-text"> Min: </span>
+          {{ weather.daily.temperature_2m_min }}
+          {{ weather.hourly_units.temperature_2m }}
+        </p>
+        <p class="user-card__extremes">
+          <span class="user-card__extremes-text"> Max: </span
+          >{{ weather.daily.temperature_2m_max }}
+          {{ weather.hourly_units.temperature_2m }}
+        </p>
+      </div>
+    </div>
+  </ng-template>
+
+  <button
+    class="user-card__button"
+    [ngClass]="{
+      'save-button': !isSavedUser,
+      'remove-button': isSavedUser
+    }"
+    (click)="handleUserClick()"
+  >
+    {{ isSavedUser ? "Remove" : "Save" }}
+  </button>
+</div>

@@ -1,0 +1,270 @@
+@import "../../../assets/scss/mixin.scss";
+
+.user-card {
+  display: flex;
+  width: 280px;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(175, 218, 237, 0.14) 0%,
+    rgba(190, 244, 205, 0.34) 35.3%,
+    rgba(243, 182, 241, 0.1) 100%
+  );
+
+  @include for-size(tablet) {
+    padding: 25px;
+    width: 400px;
+    gap: 26px;
+  }
+
+  @include for-size(desktop) {
+    gap: 32px;
+    width: 420px;
+  }
+
+  &__info,
+  &__weather {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+
+    @include for-size(tablet) {
+      gap: 12px;
+    }
+
+    @include for-size(desktop) {
+      gap: 16px;
+    }
+  }
+
+  &__weather {
+    justify-content: center;
+  }
+
+  &__avatar {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    width: 128px;
+    height: 128px;
+    background-color: gray;
+    border-radius: 50%;
+
+    &-picture {
+      border-radius: 50%;
+    }
+  }
+
+  &__button {
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: transparent;
+
+    &.save-button {
+      border: 1px solid #57c557;
+
+      &:hover {
+        background-color: #57c557;
+        color: #fafafa;
+      }
+    }
+
+    &.remove-button {
+      border: 1px solid #fb5e5e;
+
+      &:hover {
+        background-color: #fb5e5e;
+        color: #fafafa;
+      }
+    }
+
+    @include for-size(tablet) {
+      padding: 10px 18px;
+      font-size: 16px;
+    }
+
+    @include for-size(desktop) {
+      padding: 12px 22px;
+      font-size: 20px;
+    }
+  }
+
+  &__descripcion {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    white-space: nowrap;
+    max-width: 100%;
+
+    @include for-size(tablet) {
+      gap: 16px;
+    }
+
+    @include for-size(desktop) {
+      gap: 18px;
+    }
+  }
+
+  &__full-name {
+    display: inline;
+    font-size: 16px;
+    font-weight: 500;
+
+    @include for-size(tablet) {
+      font-size: 20px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 24px;
+    }
+  }
+
+  &__gender-icon {
+    font-size: 18px;
+    font-weight: bold;
+
+    @include for-size(tablet) {
+      font-size: 22px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 26px;
+    }
+
+    &--male {
+      color: #5a6fbf;
+    }
+
+    &--female {
+      color: #ce5acf;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @include for-size(tablet) {
+      font-size: 18px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 20px;
+    }
+
+    &--email {
+      font-style: italic;
+      font-family: auto;
+      color: #615f5d;
+    }
+  }
+
+  &__icon {
+    font-size: 14px;
+
+    @include for-size(tablet) {
+      font-size: 16px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 20px;
+    }
+  }
+
+  &__weather-icon {
+    font-size: 22px;
+
+    @include for-size(tablet) {
+      font-size: 36px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 42px;
+    }
+
+    &--sun {
+      color: #ffce3f;
+    }
+
+    &--cloud {
+      color: #596185;
+    }
+
+    &--tint {
+      color: #5263b9;
+    }
+
+    &--snow {
+      color: #78d0f3;
+    }
+
+    &--thunderstorm {
+      color: #9f9889;
+    }
+  }
+
+  &__current-temperature {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d4365;
+
+    @include for-size(tablet) {
+      font-size: 20px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 24px;
+    }
+  }
+
+  &__extremes {
+    font-size: 14px;
+    color: #684169;
+
+    @include for-size(tablet) {
+      font-size: 16px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 18px;
+    }
+
+    &-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: #5e5f63;
+
+      @include for-size(tablet) {
+        font-size: 18px;
+      }
+
+      @include for-size(desktop) {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.temperature__container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @include for-size(tablet) {
+    gap: 10px;
+  }
+
+  @include for-size(desktop) {
+    gap: 12px;
+  }
+}

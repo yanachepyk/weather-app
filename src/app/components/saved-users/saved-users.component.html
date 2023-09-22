@@ -1,0 +1,8 @@
+<div class="users__container">
+  <app-user-card
+    *ngFor="let user of savedUsers"
+    [user]="user"
+    (onRemove)="removeSavedUser($event)"
+  >
+  </app-user-card>
+</div>

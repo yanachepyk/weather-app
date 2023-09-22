@@ -1,0 +1,45 @@
+@use 'three-dots' with (
+  $dot-width: 20px,
+  $dot-height: 20px,
+  $dot-color: #ababab
+);
+
+@import "./assets/scss/mixin.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+li {
+  list-style: none;
+}
